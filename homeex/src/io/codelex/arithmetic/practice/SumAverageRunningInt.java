@@ -9,7 +9,7 @@ public class SumAverageRunningInt {
         for (int number = lowerBound; number <= upperBound; ++number) {
             sum += number;
         }
-        double average = (double) sum / upperBound;
+        double average = (double) sum / (upperBound - lowerBound + 1);
         System.out.println("The sum of " + lowerBound + " to " + upperBound + " is " + sum);
         System.out.println("The average is " + average);
     }

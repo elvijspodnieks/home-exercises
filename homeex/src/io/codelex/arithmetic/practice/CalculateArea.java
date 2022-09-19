@@ -55,57 +55,50 @@ public class CalculateArea {
 
     public static void calculateCircleArea() {
 
-
-        // Get input from user
         Scanner keyboard = new Scanner(System.in);
 
-        int radius;
-        do {
-            System.out.print("What is the circle's radius? ");
-            radius = keyboard.nextInt();
-        } while (radius <= 0);
+        System.out.print("What is the circle's radius? ");
+        BigDecimal radius = keyboard.nextBigDecimal();
 
-        System.out.println("The circle's area is " + Math.PI * Math.pow(radius, 2));
+        if (radius.compareTo(BigDecimal.ZERO) < 0) {
+            System.out.println("Error: You entered negative value");
+        } else {
+            System.out.println("The rectangle's area is " + Geometry.areaOfCircle(radius));
+        }
     }
 
     public static void calculateRectangleArea() {
 
-        double length, width;
-        // Get input from user
         Scanner keyboard = new Scanner(System.in);
 
-        do {
-            System.out.print("Enter length: ");
-            length = keyboard.nextDouble();
-        } while (length <= 0);
+        System.out.print("Enter length: ");
+        BigDecimal length = keyboard.nextBigDecimal();
+        System.out.print("Enter width: ");
+        BigDecimal width = keyboard.nextBigDecimal();
 
-
-        do {
-            System.out.print("Enter width: ");
-            width = keyboard.nextDouble();
-        } while (width <= 0);
-
-
-        System.out.println("The rectangle's area is " + length * width);
+        if (width.compareTo(BigDecimal.ZERO) < 0 || length.compareTo(BigDecimal.ZERO) < 0) {
+            System.out.println("Error: You entered negative value");
+        } else {
+            System.out.println("The rectangle's area is " + Geometry.areaOfRectangle(length, width));
+        }
     }
 
     public static void calculateTriangleArea() {
-        double base;
-        double height;
+
 
         Scanner keyboard = new Scanner(System.in);
+        System.out.print("Triangle's base: ");
+        BigDecimal base = keyboard.nextBigDecimal();
+        System.out.print("Triangle's height: ");
+        BigDecimal height = keyboard.nextBigDecimal();
 
-        do {
-            System.out.print("Triangle's base: ");
-            base = keyboard.nextDouble();
-        } while (base <= 0);
 
-        do {
-            System.out.print("Triangle's height: ");
-            height = keyboard.nextDouble();
-        } while (height <= 0);
+        if (base.compareTo(BigDecimal.ZERO) < 0 || height.compareTo(BigDecimal.ZERO) < 0) {
+            System.out.println("Error: You entered negative value");
+        } else {
+            System.out.println("The rectangle's area is " + Geometry.areaOfTriangle(base, height));
+        }
 
-        // Display the triangle's area.
-        System.out.println("The triangle's area is " + base * height * 0.5);
+
     }
 }
