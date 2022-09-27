@@ -25,7 +25,7 @@ public class Piglet {
             }
             result = result + rollNumber;
             System.out.println("You rolled a " + rollNumber + " \nRoll again? yes/no");
-            input = userInput.next();
+            input = userInput.next().toLowerCase();
 
         } while (input.equals("yes"));
 
