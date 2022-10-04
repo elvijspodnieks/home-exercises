@@ -20,11 +20,12 @@ public class DogTest {
         buster.setMother(lady);
         buster.setFather(sparky);
 
-        System.out.println(coco.fathersName()); // expect Buster
-        System.out.println(sparky.fathersName()); // expect Unknown
+        System.out.println(coco.getName() + " father is " + coco.fathersName());
+        System.out.println(sparky.getName() + " father is " + sparky.fathersName());
 
-        System.out.println(max.hasSameMotherAs(coco)); //expect true
-        System.out.println(max.hasSameMotherAs(rocky)); //expect true
-        System.out.println(coco.hasSameMotherAs(buster)); //expect false
+        System.out.println(max.getName() + " has same mother as " + coco.getName() + "?  " + max.hasSameMotherAs(coco));
+        System.out.println(max.getName() + " has same mother as " + rocky.getName() + "?  " + max.hasSameMotherAs(rocky));
+        System.out.println(buster.getName() + " has same mother as " + max.getName() + "?  " + buster.hasSameMotherAs(max));
+
     }
 }

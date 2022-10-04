@@ -8,22 +8,14 @@ public class Main {
         Movie movie2 = new Movie("Glass", "Buena Vista International", "PG-13");
         Movie movie3 = new Movie("Spider-Man: Into the Spider-Verse", "Columbia Pictures", "PG");
 
-        Movie[] movies = new Movie[]{movie1, movie2, movie2};
-        System.out.println(getPG(movies));
+        ArrayList<Movie> movies = new ArrayList<>();
+        movies.add(movie1);
+        movies.add(movie2);
+        movies.add(movie3);
 
 
-    }
+        Movie.moviesWithPGRating(movies);
 
-    static ArrayList<Movie> getPG(Movie[] movies) {
-
-        ArrayList<Movie> moviesWithRatingPG = new ArrayList<>();
-        for (int i = 0; i < movies.length; i++) {
-            if (movies[i].rating.equals("PG")) {
-                moviesWithRatingPG.add(movies[i]);
-            }
-
-        }
-        return moviesWithRatingPG;
 
     }
 

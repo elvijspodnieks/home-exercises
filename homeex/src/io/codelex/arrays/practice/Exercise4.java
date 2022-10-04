@@ -10,7 +10,7 @@ public class Exercise4 {
                 1456, 2265, 1457, 2456
         };
 
-        int num = 1245;
+        int num = 1254;
         for (int i : myArray) {
             if (num == i) {
                 System.out.println("Contains!");

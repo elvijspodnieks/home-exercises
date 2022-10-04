@@ -14,10 +14,10 @@ public class EnergyDrinks {
     }
 
     public static double calculateEnergyDrinkers(int numberSurveyed) {
-        return Math.round(PURCHASED_ENERGY_DRINKS * NUMBERED_SURVEYED);
+        return PURCHASED_ENERGY_DRINKS * numberSurveyed;
     }
 
     public static double calculatePreferCitris(int numberSurveyed) {
-        return Math.round(PREFER_CITRUS_DRINKS * PURCHASED_ENERGY_DRINKS * NUMBERED_SURVEYED);
+        return PREFER_CITRUS_DRINKS * PURCHASED_ENERGY_DRINKS * numberSurveyed;
     }
 }
