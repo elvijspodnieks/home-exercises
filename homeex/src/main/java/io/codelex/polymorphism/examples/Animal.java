@@ -1,0 +1,5 @@
+package main.java.io.codelex.polymorphism.examples;
+
+public abstract class Animal {
+    public abstract void makeSound();
+}
