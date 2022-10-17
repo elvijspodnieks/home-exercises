@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/home-exercises.iml" filepath="$PROJECT_DIR$/.idea/home-exercises.iml" />
-      <module fileurl="file://$PROJECT_DIR$/homeex/homeex.iml" filepath="$PROJECT_DIR$/homeex/homeex.iml" />
-    </modules>
-  </component>
-</project>

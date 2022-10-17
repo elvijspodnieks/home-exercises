@@ -10,7 +10,7 @@ public class Main {
         String writeFileArray = nameArray[0];
         String name = new StringBuilder(writeFileArray).reverse().toString();
         BufferedReader in = new BufferedReader(new FileReader(PATH_TO_APP + readFile));
-        BufferedWriter out = new BufferedWriter(new FileWriter(PATH_TO_APP + name));
+        BufferedWriter out = new BufferedWriter(new FileWriter(PATH_TO_APP + name + ".txt"));
 
         String line;
         while ((line = in.readLine()) != null) {

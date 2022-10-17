@@ -7,14 +7,9 @@ public class CreditCard extends Card     {
     }
 
     @Override
-    public void addMoney(int money) {
-        this.balance += money;
-    }
-
-    @Override
-    public void takeMoney(int money){
+    public void takeMoney(double money){
         if (this.balance < money){
-            System.out.println("NotEnoughFundsException");
+            throw new NotEnoughFundsException("Not enough funds");
         } else {
             balance -= money;
         }
@@ -26,10 +21,10 @@ public class CreditCard extends Card     {
     @Override
     public String toString() {
         return "CreditCard{" +
-                "number=" + number +
-                ", ownerFullName='" + ownerFullName + '\'' +
-                ", ccv='" + ccv + '\'' +
-                ", balance=" + balance +
+                "number=" + getNumber() +
+                ", ownerFullName='" + getOwnerFullName() + '\'' +
+                ", ccv='" + getCcv() + '\'' +
+                ", balance=" + getBalance() +
                 '}';
     }
 }

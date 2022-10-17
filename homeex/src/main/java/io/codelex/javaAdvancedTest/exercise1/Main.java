@@ -8,13 +8,9 @@ public class Main {
         myCreditCard.addMoney(30000);
         System.out.println(myCreditCard);
 
-        DebitCard myDebetCard = new DebitCard("2183242373128", "John Wick", "023", 124333);
-        myDebetCard.takeMoney(13000);
-        myDebetCard.addMoney(1000);
-        System.out.println(myDebetCard);
-
-
+        DebitCard myDebitCard = new DebitCard("2183242373128", "John Wick", "023", 124333);
+        myDebitCard.takeMoney(13000);
+        myDebitCard.addMoney(1000);
+        System.out.println(myDebitCard);
     }
-
-
 }
