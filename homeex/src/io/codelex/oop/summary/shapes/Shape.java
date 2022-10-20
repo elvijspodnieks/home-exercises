@@ -2,14 +2,14 @@ package io.codelex.oop.summary.shapes;
 
 public abstract class Shape {
 
-    private int numSides;
-
-    public int getNumSides() {
-        return numSides;
-    }
+    private final int numSides;
 
     public Shape(int numSides) {
         this.numSides = numSides;
+    }
+
+    public int getNumSides() {
+        return numSides;
     }
 
     public abstract double getArea();

@@ -42,7 +42,13 @@ public class CarService {
 
     public Car mostCheaper() {
         carList.sort(Comparator.comparing(Car::getPrice));
-        return carList.get(1);
+        return carList.get(0);
+    }
+
+    public List<Car> carsWithAtLeast3Manufactuers() {
+        return carList.stream()
+                .filter(car -> car.manufacturer.size() >= 3)
+                .toList();
     }
 
 

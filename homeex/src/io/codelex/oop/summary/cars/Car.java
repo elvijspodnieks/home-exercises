@@ -11,7 +11,7 @@ public class Car {
     private String model;
     private double price;
     private int yearOfManufacturing;
-    private List<Manufacturer> manufacturer;
+    List<Manufacturer> manufacturer;
     private EngineType engineType;
 
     public Car(String name, String model, double price, int yearOfManufacturing, EngineType engineType, Manufacturer... manufacturer) {
@@ -72,6 +72,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return "\n\t - " + name + " " + model + " " + engineType + " " + yearOfManufacturing + ", price: " + (int) price + ", made by: " + manufacturer;
+        return " - " + name + " " + model + " " + engineType + " " + yearOfManufacturing + ", price: " + (int) price + ", made by: " + manufacturer;
     }
 }

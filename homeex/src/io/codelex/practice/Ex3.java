@@ -12,6 +12,9 @@ public class Ex3 {
         LocalDate secondEnd = LocalDate.of(2022, 1, 25);
         DatePeriod secondPeriod = new DatePeriod(secondStart, secondEnd);
 
+        DatePeriod overlap = firstPeriod.intersection(secondPeriod);
+
+        System.out.println(overlap);
 
     }
 }
