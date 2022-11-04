@@ -38,11 +38,11 @@ public class StreamsExercise {
                 .collect(toList());
     }
 
-    public static Integer countUsersOlderThen25(List<User> users) {
-        List<User> result = users.stream()
+    public static Long countUsersOlderThen25(List<User> users) {
+        return users.stream()
                 .filter(q -> q.getAge() > 25)
-                .toList();
-        return result.size();
+                .count();
+
     }
 
     public static List<String> mapToUpperCase(List<String> strings) {
@@ -165,7 +165,7 @@ public class StreamsExercise {
     }
 
     public static List<Integer> generate10RandomNumbers() {
-        return new Random().ints(0,100)
+        return new Random().ints(0, 100)
                 .limit(10)
                 .boxed()
                 .collect(Collectors.toList());
@@ -178,7 +178,7 @@ public class StreamsExercise {
     }
 
     public static int sumAge(List<User> users) {
-        return  users.stream()
+        return users.stream()
                 .map(User::getAge)
                 .mapToInt(Integer::intValue)
                 .sum();
