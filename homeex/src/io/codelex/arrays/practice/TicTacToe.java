@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class TicTacToe {
 
     private static char[][] board = new char[3][3];
+    private static int maxTurn = 9;
 
     public static void main(String[] args) {
 
@@ -15,7 +16,7 @@ public class TicTacToe {
         char player = '0';
 
         System.out.println("'" + player + "', choose your location (row, column): ");
-        while (counter < 9) {
+        while (counter < maxTurn) {
             String[] input = keyboard.nextLine().split(" ");
             int r = Integer.parseInt(input[0]);
             int c = Integer.parseInt(input[1]);

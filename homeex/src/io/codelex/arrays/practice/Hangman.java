@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Hangman {
-    private final static String[] words = {
+    private final static String[] WORDS = {
             "recommendations", "zones", "grounds", "movement", "terms", "stadiums", "sport", "plans",
             "values", "football", "preparations", "team", "world", "champions", "expense", "time",
             "people", "happy", "public", "international", "decision", "minister", "seconds", "boat",
@@ -18,6 +18,7 @@ public class Hangman {
     public static char[] wordToGuess;
     public static char[] wordForWin;
     public static ArrayList<Character> missedLetters;
+
     public static boolean gameStart = true;
 
     public static void main(String[] args) {
@@ -29,7 +30,7 @@ public class Hangman {
         }
     }
 
-    public static void playGame() {
+    private static void playGame() {
         while (!checkWin()) {
             Scanner in = new Scanner(System.in);
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
@@ -64,16 +65,16 @@ public class Hangman {
         }
     }
 
-    public static void startNewGame() {
+    private static void startNewGame() {
         Random random = new Random();
-        int index = random.nextInt(words.length);
-        hiddenWord = words[index];
+        int index = random.nextInt(WORDS.length);
+        hiddenWord = WORDS[index];
         missedLetters = new ArrayList<>();
         wordForWin = hiddenWord.replaceAll(".(?!$)", "$0 ").toCharArray();
         wordToGuess = hiddenWord.replaceAll("\\w", "_ ").toCharArray();
     }
 
-    public static void updateWord(char a) {
+    private static void updateWord(char a) {
         for (int i = 0; i < wordToGuess.length - 1; i++) {
             if (wordForWin[i] == a) {
                 wordToGuess[i] = a;
@@ -81,7 +82,7 @@ public class Hangman {
         }
     }
 
-    public static boolean checkIfContainsLetter(char letter) {
+    private static boolean checkIfContainsLetter(char letter) {
         for (Character chr : wordForWin) {
             if (chr == letter) {
                 return true;
@@ -90,7 +91,7 @@ public class Hangman {
         return false;
     }
 
-    public static boolean checkIfContainsMissedLetter(char letter) {
+    private static boolean checkIfContainsMissedLetter(char letter) {
         for (Character missedLetter : missedLetters) {
             if (missedLetter == letter) {
                 return true;
@@ -99,12 +100,12 @@ public class Hangman {
         return false;
     }
 
-    public static boolean checkWin() {
+    private static boolean checkWin() {
         char[] wordToGuess2 = Arrays.copyOf(wordToGuess, wordToGuess.length - 1);
         return Arrays.equals(wordForWin, wordToGuess2);
     }
 
-    public static void playAgain() {
+    private static void playAgain() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Play \"again\" or \"quit\"? ");
         String starGame = sc.nextLine().toLowerCase();

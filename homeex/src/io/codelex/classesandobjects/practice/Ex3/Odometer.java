@@ -1,6 +1,8 @@
 package io.codelex.classesandobjects.practice.Ex3;
 
 public class Odometer {
+
+    private final int maxMilage = 999999;
     private int milage;
 
     public Odometer(int milage) {
@@ -18,7 +20,7 @@ public class Odometer {
 
     public void addKilometers(double kilometers) {
         this.milage += kilometers;
-        if (this.milage > 999999) {
+        if (this.milage > maxMilage) {
             this.milage = 0;
         }
     }
